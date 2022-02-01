@@ -3,7 +3,7 @@
 
 <div class="card">
     <div class="card-header">
-      <h3 class="card-title">DATA - DATA outlet</h3>
+      <h3 class="card-title">DATA - DATA OUTLET</h3>
     </div>
     <!-- /.card-header -->
     <div class="card-body">
@@ -14,9 +14,9 @@
 
         <thead>
         <tr style="text-align: center">
-          <th>NAMA outlet</th>
-          <th>ALAMAT outlet</th>
-          <th>NOMER TELEPON</th>
+          <th>NAMA </th>
+          <th>ALAMAT </th>
+          <th>TELEPON</th>
           <th>AKSI</td>
         </tr>
         </thead>

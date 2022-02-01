@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\tb_outlet;
 use App\Models\tb_paket;
 use Illuminate\Http\Request;
 
@@ -14,7 +15,11 @@ class tbPaketController extends Controller
      */
     public function index()
     {
-        //
+        $paket  = tb_paket::all();
+        $outlet  = tb_outlet::all();
+        return view('CRUD.paket.index', compact(
+            'paket','outlet'
+        ));
     }
 
     /**
@@ -35,7 +40,15 @@ class tbPaketController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $validated = $request->validate([
+            'id_outlet' => 'required',
+            'jenis' => 'required',
+            'nama_paket' => 'required',
+            'harga' => 'required'
+        ]);
+        $create = tb_paket::create($validated);
+        if($create)  return redirect('paket')->with('success', 'Data Sudah Ditambahkan');
+
     }
 
     /**

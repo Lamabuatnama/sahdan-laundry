@@ -1,6 +1,8 @@
 @extends('template.template')
 @section('content')
-
+@if (Session::has('success'))
+        <div class="alert alert-info">{{ Session::get('success') }}</div>
+     @endif
 <div class="card">
     <div class="card-header">
       <h3 class="card-title">DATA - DATA OUTLET</h3>
@@ -25,7 +27,7 @@
           <td>{{$value->nama}}</td>
           <td>{{$value->alamat}}</td>
           <td>{{$value->tlp}}</td>
-          <td>UPDATE</td>
+          <td style="text-align: center"> @include('crud.outlet.update')</td>
         </tr>
         @endforeach
         </tbody>

@@ -77,9 +77,16 @@ class tbOutletController extends Controller
      * @param  \App\Models\tb_outlet  $tb_outlet
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, tb_outlet $tb_outlet)
+    public function update(Request $request, tb_outlet $tb_outlet, $id)
     {
-        //
+        $validated = $request->validate([
+        'nama' => 'required',
+        'alamat' => 'required',
+        'tlp' => 'required'
+                 ]);
+        $update = $tb_outlet->find($id)->update($validated);
+        if($update)  return redirect('outlet')->with('success', 'Data Sudah Diupdate');
+
     }
 
     /**

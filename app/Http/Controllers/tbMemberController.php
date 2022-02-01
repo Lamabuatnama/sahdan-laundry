@@ -97,8 +97,9 @@ class tbMemberController extends Controller
      * @param  \App\Models\tb_member  $tb_member
      * @return \Illuminate\Http\Response
      */
-    public function destroy(tb_member $tb_member)
+    public function destroy(tb_member $tb_member,$id)
     {
-        //
+        $tb_member->find($id)->delete();
+     return redirect('member')->with('success', 'Data Sudah Dihapus');
     }
 }

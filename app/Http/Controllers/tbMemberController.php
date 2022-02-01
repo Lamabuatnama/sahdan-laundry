@@ -14,7 +14,10 @@ class tbMemberController extends Controller
      */
     public function index()
     {
-        //
+        $member  = tb_member::all();
+        return view('CRUD.member.index', compact(
+            'member'
+        ));
     }
 
     /**
@@ -25,6 +28,7 @@ class tbMemberController extends Controller
     public function create()
     {
         //
+
     }
 
     /**
@@ -35,7 +39,14 @@ class tbMemberController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $validated = $request->validate([
+            'nama' => 'required',
+            'alamat' => 'required',
+            'jenis_kelamin' => 'required',
+            'tlp' => 'required'
+        ]);
+        $create = tb_member::create($validated);
+        if($create)  return redirect('member')->with('success', 'Data Sudah Ditambahkan');
     }
 
     /**

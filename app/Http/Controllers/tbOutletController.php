@@ -95,8 +95,10 @@ class tbOutletController extends Controller
      * @param  \App\Models\tb_outlet  $tb_outlet
      * @return \Illuminate\Http\Response
      */
-    public function destroy(tb_outlet $tb_outlet)
+    public function destroy(tb_outlet $tb_outlet,$id)
     {
-        //
+        $tb_outlet->find($id)->delete();
+     return redirect('outlet')->with('success', 'Data Sudah Dihapus');
+
     }
 }

@@ -27,7 +27,7 @@
           <td>{{$value->nama}}</td>
           <td>{{$value->alamat}}</td>
           <td>{{$value->tlp}}</td>
-          <td style="text-align: center"> @include('crud.outlet.update')</td>
+          <td style="text-align: center"> @include('crud.outlet.update')|@include('crud.outlet.hapus')</td>
         </tr>
         @endforeach
         </tbody>

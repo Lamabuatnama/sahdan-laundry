@@ -14,7 +14,10 @@ class tbOutletController extends Controller
      */
     public function index()
     {
-        //
+        $outlet  = tb_outlet::all();
+        return view('CRUD.Outlet.index', compact(
+            'outlet'
+        ));
     }
 
     /**
@@ -35,7 +38,14 @@ class tbOutletController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $validated = $request->validate([
+            'nama' => 'required',
+            'alamat' => 'required',
+            'tlp' => 'required'
+        ]);
+        $create = tb_outlet::create($validated);
+        if($create)  return redirect('outlet')->with('success', 'Data Sudah Ditambahkan');
+
     }
 
     /**

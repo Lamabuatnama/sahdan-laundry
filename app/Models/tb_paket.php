@@ -17,7 +17,7 @@ class tb_paket extends Model
         'harga'
     ];
 
-    function paket(){
+    function outlet(){
         return $this->belongsTo(tb_outlet::class,'id_outlet');
     }
 }

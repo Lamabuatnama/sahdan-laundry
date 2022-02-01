@@ -15,7 +15,7 @@ class tb_outlet extends Model
         'alamat',
         'tlp'
     ];
-    public function outlet(){
-        return $this->hasMany(tb_outlet::class);
+    public function paket(){
+        return $this->hasMany(tb_paket::class);
     }
 }

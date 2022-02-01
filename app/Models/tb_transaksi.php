@@ -10,7 +10,7 @@ class tb_transaksi extends Model
     use HasFactory;
     protected $table = 'tb_transaksi';
     public $timestamps = false;
-    protected $filelable = [
+    protected $fillable = [
         'id_outlet',
         'kode_invoice',
         'id_member',

@@ -10,7 +10,7 @@ class tb_users extends Model
     use HasFactory;
     protected $table = 'tb_users';
     public $timestamps = false;
-    protected $filelable = [
+    protected $fillable = [
         'nama',
         'email',
         'password',

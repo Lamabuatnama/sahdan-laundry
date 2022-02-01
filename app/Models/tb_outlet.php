@@ -10,7 +10,7 @@ class tb_outlet extends Model
     use HasFactory;
     protected $table = 'tb_outlet';
     public $timestamps = false;
-    protected $filelable = [
+    protected $fillable = [
         'nama',
         'alamat',
         'tlp'

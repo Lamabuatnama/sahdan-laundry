@@ -10,7 +10,7 @@ class tb_paket extends Model
     use HasFactory;
     protected $table = 'tb_paket';
     public $timestamps = false;
-    protected $filelable = [
+    protected $fillable = [
         'id_outlet',
         'jenis',
         'nama_paket',

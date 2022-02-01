@@ -10,7 +10,7 @@ class tb_member extends Model
     use HasFactory;
     protected $table = 'tb_member';
     public $timestamps = false;
-    protected $filelable = [
+    protected $fillable = [
         'nama',
         'alamat',
         'jenis_kelamin',

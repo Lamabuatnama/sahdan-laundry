@@ -35,7 +35,7 @@
               }
           @endphp
           <td>{{$value->tlp}}</td>
-          <td style="text-align: center">UPDATE</td>
+          <td style="text-align: center"> @include('crud.member.update')</td>
         </tr>
         @endforeach
         </tbody>

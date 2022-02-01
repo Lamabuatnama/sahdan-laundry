@@ -78,9 +78,17 @@ class tbMemberController extends Controller
      * @param  \App\Models\tb_member  $tb_member
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, tb_member $tb_member)
+    public function update(Request $request, tb_member $tb_member,$id)
     {
-        //
+        $validated = $request->validate([
+            'nama' => 'required',
+            'alamat' => 'required',
+            'jenis_kelamin' => 'required',
+            'tlp' => 'required'
+        ]);
+        $update = $tb_member->find($id)->update($request->all());
+         if($update)  return redirect('member')->with('success', 'Data Sudah Diupdate');
+
     }
 
     /**

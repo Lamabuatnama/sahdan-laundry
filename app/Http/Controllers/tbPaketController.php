@@ -80,9 +80,17 @@ class tbPaketController extends Controller
      * @param  \App\Models\tb_paket  $tb_paket
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, tb_paket $tb_paket)
+    public function update(Request $request, tb_paket $tb_paket, $id)
     {
-        //
+        $validated = $request->validate([
+            'id_outlet' => 'required',
+            'jenis' => 'required',
+            'nama_paket' => 'required',
+            'harga' => 'required'
+        ]);
+        $update = $tb_paket->find($id)->update($validated);
+    if($update)  return redirect('paket')->with('success', 'Data Sudah Diupdate');
+
     }
 
     /**

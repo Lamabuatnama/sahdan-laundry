@@ -17,8 +17,8 @@
         <tr style="text-align: center">
           <th>NAMA</th>
           <th>ALAMAT</th>
-          <th>JENIS KELAMIN</th>
-          <th>TELEPON</th>
+          <th>NAMA PAKET</th>
+          <th>HARGA</th>
           <th>AKSI</td>
         </tr>
         </thead>
@@ -30,7 +30,7 @@
           <td>{{$value->jenis}}</td>
           <td>{{$value->nama_paket}}</td>
           <td>{{$value->harga}}</td>
-          <td style="text-align: center">UPDATE</td>
+          <td style="text-align: center">@include('crud.paket.update')</td>
         </tr>
         @endforeach
         </tbody>

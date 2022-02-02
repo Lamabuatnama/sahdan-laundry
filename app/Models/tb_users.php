@@ -17,7 +17,7 @@ class tb_users extends Model
         'id_outlet',
         'role'
     ];
-    function users(){
+    function outlet(){
         return $this->belongsTo(tb_outlet::class,'id_outlet');
     }
 }

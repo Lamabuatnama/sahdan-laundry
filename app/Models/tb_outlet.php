@@ -18,4 +18,7 @@ class tb_outlet extends Model
     public function paket(){
         return $this->hasMany(tb_paket::class);
     }
+    public function users(){
+        return $this->hasMany(tb_users::class);
+    }
 }

@@ -2,8 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\tb_outlet;
 use App\Models\tb_users;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Hash;
 
 class tbUsersController extends Controller
 {
@@ -14,7 +16,9 @@ class tbUsersController extends Controller
      */
     public function index()
     {
-        //
+        $users = tb_users::all();
+        $outlet = tb_outlet::all();
+        return view('CRUD.users.index', compact('users','outlet'));
     }
 
     /**
@@ -35,7 +39,18 @@ class tbUsersController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $validated = $request->validate([
+            'nama' => 'required',
+            'email' => 'required|email',
+            'password' => 'required',
+            'id_outlet' => 'required',
+            'role' => 'required'
+
+        ]);
+        $validated['password']=Hash::make($validated['password']);
+
+        $create = tb_users::create($validated);
+        if($create)  return redirect('/')->with('success', 'Data Sudah Ditambahkan');
     }
 
     /**

@@ -3,6 +3,7 @@
 use App\Http\Controllers\tbMemberController;
 use App\Http\Controllers\tbOutletController;
 use App\Http\Controllers\tbPaketController;
+use App\Http\Controllers\tbUsersController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -23,3 +24,4 @@ Route::get('/', function () {
 Route::resource('/outlet', tbOutletController::class);
 Route::resource('/member', tbMemberController::class);
 Route::resource('/paket', tbPaketController::class);
+Route::resource('/users', tbUsersController::class);

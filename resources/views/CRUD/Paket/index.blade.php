@@ -30,7 +30,7 @@
           <td>{{$value->jenis}}</td>
           <td>{{$value->nama_paket}}</td>
           <td>{{$value->harga}}</td>
-          <td style="text-align: center">@include('crud.paket.update')</td>
+          <td style="text-align: center">@include('crud.paket.update')|@include('crud.paket.hapus')</td>
         </tr>
         @endforeach
         </tbody>

@@ -99,8 +99,10 @@ class tbPaketController extends Controller
      * @param  \App\Models\tb_paket  $tb_paket
      * @return \Illuminate\Http\Response
      */
-    public function destroy(tb_paket $tb_paket)
+    public function destroy(tb_paket $tb_paket,$id)
     {
-        //
+        $tb_paket->find($id)->delete();
+     return redirect('paket')->with('success', 'Data Sudah Dihapus');
+
     }
 }

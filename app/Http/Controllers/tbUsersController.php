@@ -82,9 +82,22 @@ class tbUsersController extends Controller
      * @param  \App\Models\tb_users  $tb_users
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, tb_users $tb_users)
+    public function update(Request $request, tb_users $tb_users, $id)
     {
-        //
+        $validated = $request->validate([
+            'nama' => 'required',
+            'email' => 'required|email',
+            'id_outlet' => 'required',
+            'role' => 'required',
+
+        ]);
+
+        if($request->password != '' ){
+            $validated['password']=hash::make($request->password);
+        }
+        $update = $tb_users->find($id)->update($validated);
+        if($update)  return redirect('users')->with('success', 'Data Sudah Diupdate');
+
     }
 
     /**

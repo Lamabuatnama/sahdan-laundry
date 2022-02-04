@@ -19,6 +19,7 @@
           <th>NAMA</th>
           <th>EMAIL</th>
           <th>ROLE</th>
+          <th>OUTLET</th>
           <th>AKSI</td>
         </tr>
         </thead>
@@ -27,7 +28,8 @@
           <td>{{$value->nama}}</td>
           <td>{{$value->email}}</td>
           <td>{{$value->role}}</td>
-          <td style="text-align: center">GX</td>
+          <td>{{$value->outlet->nama}}</td>
+          <td style="text-align: center">@include('CRUD.users.update')</td>
         </tr>
         @endforeach
         </tbody>

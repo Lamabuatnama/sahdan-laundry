@@ -121,15 +121,36 @@
           <a href="#" class="dropdown-item dropdown-footer">See All Notifications</a>
         </div>
       </li>
-      <li class="nav-item">
-        <a class="nav-link" data-widget="fullscreen" href="#" role="button">
-          <i class="fas fa-expand-arrows-alt"></i>
+      <li class="nav-item dropdown">
+        <a class="nav-link" data-toggle="dropdown" href="#">
+            <i class="fas fa-angle-down"></i>
         </a>
+        <div class="dropdown-menu dropdown-menu-lg dropdown-menu-right">
+            <div class="user-panel mt-2 pb-3 mb-3 d-flex">
+                <a href="profil">
+                <div class="image">
+                  <img src="{{asset('assets')}}/dist/img/user2-160x160.jpg" class="img-circle elevation-2" alt="User Image">
+                </div>
+                <div class="">
+                  <a href="" class="d-block">{{auth()->user()->nama}}</a>
+                  <p>Lihat Profil</p>
+                </div>
+            </a>
+            </div>
+            <div class="user-panel mt-4 pb-3 mb-3 d-flex">
+                <div class="image">
+                    <i class="fas fa-sign-out-alt" style="size: 100px" ></i>
+                </div>
+                <div class="info">
+                    <form action="{{route('logout')}}" method="post">
+                        @csrf
+                        <button class="btn-primary form-control" type="submit">Logut</button>
+                </form>
+                </div>
+            </div>
+          </a>
+        </div>
       </li>
-      <li class="nav-item">
-        <a class="nav-link" data-widget="control-sidebar" data-slide="true" href="#" role="button">
-          <i class="fas fa-th-large"></i>
-        </a>
       </li>
     </ul>
   </nav>

@@ -29,7 +29,7 @@
           <td>{{$value->email}}</td>
           <td>{{$value->role}}</td>
           <td>{{$value->outlet->nama}}</td>
-          <td style="text-align: center">@include('CRUD.users.update')</td>
+          <td style="text-align: center">@include('CRUD.users.update')|@include('CRUD.users.hapus')</td>
         </tr>
         @endforeach
         </tbody>

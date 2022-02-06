@@ -8,7 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 class tb_users extends Model
 {
     use HasFactory;
-    protected $table = 'tb_users';
+    protected $table = 'users';
     public $timestamps = false;
     protected $fillable = [
         'nama',

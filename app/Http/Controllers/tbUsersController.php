@@ -106,8 +106,9 @@ class tbUsersController extends Controller
      * @param  \App\Models\tb_users  $tb_users
      * @return \Illuminate\Http\Response
      */
-    public function destroy(tb_users $tb_users)
+    public function destroy(tb_users $tb_users,$id)
     {
-        //
+        $tb_users->find($id)->delete();
+     return redirect('users')->with('success', 'Data Sudah Dihapus');
     }
 }

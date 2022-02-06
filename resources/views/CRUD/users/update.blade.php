@@ -35,7 +35,7 @@
                   </div>
                 </div>
                 <div class="input-group mb-3">
-                 <input type="password" name="password"   class="form-control">
+                 <input type="password" name="password" class="form-control">
                   <div class="input-group-append">
                     <div class="input-group-text">
                       <span class="fas fa-lock"></span>

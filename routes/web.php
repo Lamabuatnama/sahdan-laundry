@@ -17,7 +17,6 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
-Route::resource('/users', tbUsersController::class);
 
 
 Route::middleware('guest')->group(function(){
@@ -28,7 +27,6 @@ Route::middleware('guest')->group(function(){
     });
 });
 
-Route::post('/chec', [loginController::class, 'chec'])->name('chec');
 Route::post('/logout', [loginController::class, 'logout'])->name('logout');
 Route::middleware('auth')->group(function () {
 

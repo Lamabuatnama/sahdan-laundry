@@ -50,6 +50,5 @@
   </div>
 
   @endsection
-  @include('crud.member.script')
 
 

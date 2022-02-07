@@ -16,7 +16,7 @@
 
         <thead>
         <tr style="text-align: center">
-          <th>NAMA </th>
+          <th>NAMA OUTLET</th>
           <th>ALAMAT </th>
           <th>TELEPON</th>
           <th>AKSI</td>

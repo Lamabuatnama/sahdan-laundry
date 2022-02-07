@@ -35,7 +35,12 @@
                 </div>
               </div>
               <div class="input-group mb-3">
-                <input type="text" class="form-control"value="{{$value->jenis}}" name="jenis">
+                <select type="text" name="jenis" class="form-control" placeholder="Retype jenis">
+                    <option value="kiloan" {{$value->jenis == 'kiloan' ? 'selected' : ''}}>Kiloan</option>
+                    <option value="selimut" {{$value->jenis == 'selimut' ? 'selected' : ''}}>Selimut</option>
+                    <option value="bed_cover" {{$value->jenis == 'bed_cover' ? 'selected' : ''}}>Bed Cover</option>
+                    <option value="kaos" {{$value->jenis == 'kaos' ? 'selected' : ''}}>Kaos</option>
+                </select>
                 <div class="input-group-append">
                   <div class="input-group-text">
                     <span class="fas fa-envelope" name="alamat" type="text">

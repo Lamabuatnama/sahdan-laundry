@@ -27,7 +27,7 @@
 
         <tr>
           <td>{{$value->outlet->nama}}</td>
-          <td>{{$value->jenis}}</td>
+          <td>{{$value->jenis == 'bed_cover' ? 'bed cover' : $value->jenis}}</td>
           <td>{{$value->nama_paket}}</td>
           <td>{{$value->harga}}</td>
           <td style="text-align: center">@include('crud.paket.update')|@include('crud.paket.hapus')</td>

@@ -37,7 +37,6 @@
                     <option value="bed_cover">Bed Cover</option>
                     <option value="kaos">Kaos</option>
                   </select>
-
                 <div class="input-group-append">
                   <div class="input-group-text">
                     <span class="fas fa-envelope" name="jenis" type="text" >

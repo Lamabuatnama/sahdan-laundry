@@ -26,7 +26,6 @@ Route::middleware('guest')->group(function(){
         return view('login/index');
     });
 });
-
 Route::post('/logout', [loginController::class, 'logout'])->name('logout');
 Route::middleware('auth')->group(function () {
 

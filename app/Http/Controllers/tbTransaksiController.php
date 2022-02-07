@@ -14,7 +14,7 @@ class tbTransaksiController extends Controller
      */
     public function index()
     {
-        //
+       //
     }
 
     /**

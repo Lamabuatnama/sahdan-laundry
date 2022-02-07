@@ -1,7 +1,12 @@
 @extends('template.template')
 @section('content')
 @if (Session::has('success'))
-        <div class="alert alert-info">{{ Session::get('success') }}</div>
+        <div class="alert alert-success alert-dismissible fade show" role="alert">
+            {{ Session::get('success') }}
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
      @endif
 <div class="card">
     <div class="card-header">
@@ -9,7 +14,7 @@
     </div>
     <!-- /.card-header -->
     <div class="card-body">
-        <table id="example1" class="table table-bordered table-striped">
+        <table id="table" class="table table-bordered table-striped">
             <div class="input-group mb-3">
     @include('crud.member.tambah')
 </div>
@@ -20,7 +25,7 @@
           <th>ALAMAT MEMBER</th>
           <th>JENIS KELAMIN</th>
           <th>NOMER TELEPON</th>
-          <th>AKSI</td>
+          <th>AKSI</th>
         </tr>
         </thead>
         @foreach ($member as $key=>$value )
@@ -35,7 +40,7 @@
               }
           @endphp
           <td>{{$value->tlp}}</td>
-          <td style="text-align: center"> @include('crud.member.update')|@include('crud.member.hapus')</td>
+          <td style="text-align: center"> @include('crud.member.update')@include('crud.member.hapus')</td>
         </tr>
         @endforeach
         </tbody>
@@ -45,5 +50,6 @@
   </div>
 
   @endsection
+  @include('crud.member.script')
 
 

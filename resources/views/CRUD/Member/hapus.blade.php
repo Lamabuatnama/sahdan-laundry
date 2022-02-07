@@ -13,7 +13,7 @@
     </div>
     <div class="modal-body">
         <div class="card-body">
-            <p class="login-box-msg" style="font-size: 26px">YAKIN INGIN MENGHAPUS DATA ?</p>
+            <p class="login-box-msg" style="font-size: 26px">YAKINgt INGIN MENGHAPUS DATA ?</p>
             <form action="member/{{$value->id}}" method="post">
                 @csrf
                 @method('delete')

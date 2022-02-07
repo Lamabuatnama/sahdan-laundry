@@ -15,7 +15,7 @@
     <div class="modal-body">
         <div class="card-body">
             <p class="login-box-msg">Menambahkan Data MEMBER</p>
-            <form action="" method="post">
+            <form action="" method="post" id="inputDataMember">
                 @csrf
               <div class="input-group mb-3">
                 <input type="text" class="form-control" placeholder="Full name" name="nama">

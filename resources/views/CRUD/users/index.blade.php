@@ -1,15 +1,20 @@
 @extends('template.template')
 @section('content')
 @if (Session::has('success'))
-        <div class="alert alert-info">{{ Session::get('success') }}</div>
+        <div class="alert alert-success alert-dismissible fade show" role="alert">
+            {{ Session::get('success') }}
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
      @endif
 <div class="card">
     <div class="card-header">
-      <h3 class="card-title">DATA - DATA MEMBER</h3>
+      <h3 class="card-title">DATA - DATA USERS</h3>
     </div>
     <!-- /.card-header -->
     <div class="card-body">
-        <table id="example1" class="table table-bordered table-striped">
+        <table id="table" class="table table-bordered table-striped">
             <div class="input-group mb-3">
                 @include('crud.users.tambah')
 </div>

@@ -46,25 +46,33 @@
               </p>
             </a>
             <ul class="nav nav-treeview">
-              <li class="nav-item">
+              <li class="nav-item" @if (auth()->user()->role != 'admin')
+                hidden
+                @endif>
                 <a href="/users" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>USERS</p>
                 </a>
               </li>
-              <li class="nav-item">
+              <li class="nav-item" @if (auth()->user()->role != 'admin')
+                    hidden
+              @endif>
                 <a href="/outlet" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>OUTLET</p>
                 </a>
               </li>
-              <li class="nav-item">
+              <li class="nav-item" @if (auth()->user()->role != 'admin')
+                hidden
+                @endif>
                 <a href="/paket" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>PAKET</p>
                 </a>
               </li>
-              <li class="nav-item">
+              <li class="nav-item" @if (auth()->user()->role == 'owner')
+                hidden
+                @endif>
                 <a href="/member" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>MEMBER</p>

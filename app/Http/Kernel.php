@@ -66,5 +66,6 @@ class Kernel extends HttpKernel
         'admin' =>\App\Http\Middleware\adminrole::class,
         'kasir' =>\App\Http\Middleware\kasirrole::class,
         'owner' =>\App\Http\Middleware\ownerrole::class,
+        'level' => \App\Http\Middleware\CheckLevel::class
     ];
 }

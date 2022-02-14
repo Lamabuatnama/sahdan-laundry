@@ -22,15 +22,18 @@
 
 {{-- <script src="{{asset('assets')}}/plugins/datatables/jquery.dataTables.js"></script> --}}
 <script src="{{asset('assets')}}/plugins/datatables/jquery.dataTables.min.js"></script>
+
+<script src="{{asset('assets')}}/plugins/datatables-bs4/js/dataTables.bootstrap4.js"></script>
+@stack('sc')
 <script>
     $(document).ready(function() {
     $('#table').DataTable();
 } );
-
         // menghapus alert
         $(".alert").fadeTo(2000, 500).slideUp(500, function() {
             $(".alert").slideUp(500);
         });
 </script>
+
 </body>
 </html>

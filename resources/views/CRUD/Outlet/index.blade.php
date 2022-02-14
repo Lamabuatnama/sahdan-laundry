@@ -21,7 +21,7 @@
 
         <thead>
         <tr style="text-align: center">
-          <th>NAMA OUTLETgi</th>
+          <th>NAMA OUTLET</th>
           <th>ALAMAT </th>
           <th>TELEPON</th>
           <th>AKSI</td>

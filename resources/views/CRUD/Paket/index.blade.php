@@ -30,8 +30,6 @@
         </tr>
         </thead>
         @foreach ($paket as $key=>$value )
-
-
         <tr>
           <td>{{$value->outlet->nama}}</td>
           <td>{{$value->jenis == 'bed_cover' ? 'bed cover' : $value->jenis}}</td>

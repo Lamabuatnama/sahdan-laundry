@@ -33,9 +33,11 @@
 
       <!-- Sidebar Menu -->
       <nav class="mt-2">
+
         <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
           <!-- Add icons to the links using the .nav-icon class
                with font-awesome or any other icon font library -->
+               @can('isAdmin')
           <li class="nav-header">FORMS</li>
           <li class="nav-item">
             <a href="#" class="nav-link">
@@ -46,99 +48,64 @@
               </p>
             </a>
             <ul class="nav nav-treeview">
-              <li class="nav-item" @if (auth()->user()->role != 'admin')
-                hidden
-                @endif>
+              <li class="nav-item">
                 <a href="/users" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>USERS</p>
                 </a>
               </li>
-              <li class="nav-item" @if (auth()->user()->role != 'admin')
-                    hidden
-              @endif>
+              <li class="nav-item">
                 <a href="/outlet" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>OUTLET</p>
                 </a>
               </li>
-              <li class="nav-item" @if (auth()->user()->role != 'admin')
-                hidden
-                @endif>
+              <li class="nav-item">
                 <a href="/paket" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>PAKET</p>
                 </a>
               </li>
-              <li class="nav-item" @if (auth()->user()->role == 'owner')
-                hidden
-                @endif>
+              <li class="nav-item">
                 <a href="/member" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>MEMBER</p>
                 </a>
               </li>
             </ul>
+            @endcan
+            @can('isKasir')
+            <li class="nav-header">FORMS</li>
+            <li class="nav-item">
+              <a href="#" class="nav-link">
+                <i class="nav-icon fas fa-edit"></i>
+                <p>
+                  Forms
+                  <i class="fas fa-angle-left right"></i>
+                </p>
+              </a>
+              <ul class="nav nav-treeview">
+                <li class="nav-item">
+                  <a href="/member" class="nav-link">
+                    <i class="far fa-circle nav-icon"></i>
+                    <p>MEMBER</p>
+                  </a>
+                </li>
+              </ul>
+            @endcan
           </li>
           <li class="nav-header">TRANSAKSI</li>
           <li class="nav-item">
-            <a href="#" class="nav-link">
-              <i class="nav-icon fas fa-tree"></i>
-              <p>
-                UI Elements
-                <i class="fas fa-angle-left right"></i>
-              </p>
+            <a href="laravel" class="nav-link">
+              <i class="nav-icon fas fa-copy"></i>
+              <p>Transaksi Jasa</p>
             </a>
-            <ul class="nav nav-treeview">
-              <li class="nav-item">
-                <a href="../UI/general.html" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>General</p>
-                </a>
-              </li>
-              <li class="nav-item">
-                <a href="../UI/icons.html" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>Icons</p>
-                </a>
-              </li>
-              <li class="nav-item">
-                <a href="../UI/buttons.html" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>Buttons</p>
-                </a>
-              </li>
-              <li class="nav-item">
-                <a href="../UI/sliders.html" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>Sliders</p>
-                </a>
-              </li>
-              <li class="nav-item">
-                <a href="../UI/modals.html" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>Modals & Alerts</p>
-                </a>
-              </li>
-              <li class="nav-item">
-                <a href="../UI/navbar.html" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>Navbar & Tabs</p>
-                </a>
-              </li>
-              <li class="nav-item">
-                <a href="../UI/timeline.html" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>Timeline</p>
-                </a>
-              </li>
-              <li class="nav-item">
-                <a href="../UI/ribbons.html" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>Ribbons</p>
-                </a>
-              </li>
-            </ul>
+          </li>
+          <li class="nav-item">
+            <a href="laravel" class="nav-link">
+              <i class="nav-icon fas fa-shopping-basket"></i>
+              <p>Laporan</p>
+            </a>
           </li>
           {{-- <li class="nav-header">EXAMPLES</li>
           <li class="nav-item">

@@ -4,6 +4,7 @@ use App\Http\Controllers\loginController;
 use App\Http\Controllers\tbMemberController;
 use App\Http\Controllers\tbOutletController;
 use App\Http\Controllers\tbPaketController;
+use App\Http\Controllers\tbTransaksiController;
 use App\Http\Controllers\tbUsersController;
 use Illuminate\Support\Facades\Route;
 
@@ -33,16 +34,16 @@ Route::middleware('auth')->group(function () {
         Route::get('/', function () {
             return view('template/index');
         });
-
-        Route::middleware('admin')->group(function () {
+        Route::middleware('level:admin,super')->group(function () {
             Route::resource('/users', tbUsersController::class);
             Route::resource('/outlet', tbOutletController::class);
             Route::resource('/paket', tbPaketController::class);
     });
-    Route::resource('/member', tbmemberController::class)->middleware('admin','kasir');
 
-
+    Route::resource('/member', tbMemberController::class)->middleware('level:admin,kasir,super');
     });
+
+    Route::resource('/transaksi', tbTransaksiController::class)->middleware('level:admin,kasir,super');
 
 });
 

@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\tb_member;
+use App\Models\tb_paket;
 use App\Models\tb_transaksi;
 use Illuminate\Http\Request;
 
@@ -14,7 +16,11 @@ class tbTransaksiController extends Controller
      */
     public function index()
     {
-       //
+        $member = tb_member::all();
+        $paket = tb_paket::all();
+       return view('Transaksi.index',compact(
+           'member','paket'
+       ));
     }
 
     /**

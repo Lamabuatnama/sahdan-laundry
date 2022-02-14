@@ -40,7 +40,7 @@
               }
           @endphp
           <td>{{$value->tlp}}</td>
-          <td style="text-align: center"> @include('crud.member.update')@include('crud.member.hapus')</td>
+          <td style="text-align: center" class="align-middle d-flex flex-row"> @include('crud.member.update')@include('crud.member.hapus')</td>
         </tr>
         @endforeach
         </tbody>

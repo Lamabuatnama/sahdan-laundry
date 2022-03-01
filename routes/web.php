@@ -1,11 +1,14 @@
 <?php
 
+use App\Http\Controllers\barang_inventarisController;
 use App\Http\Controllers\loginController;
 use App\Http\Controllers\tbMemberController;
 use App\Http\Controllers\tbOutletController;
 use App\Http\Controllers\tbPaketController;
+use App\Http\Controllers\tbTransaksi2Controller;
 use App\Http\Controllers\tbTransaksiController;
 use App\Http\Controllers\tbUsersController;
+use GuzzleHttp\Middleware;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -18,7 +21,6 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
-
 
 Route::middleware('guest')->group(function(){
     Route::get('/login', [loginController::class, 'showLoginForm'])->name('login');
@@ -40,10 +42,18 @@ Route::middleware('auth')->group(function () {
             Route::resource('/paket', tbPaketController::class);
     });
 
-    Route::resource('/member', tbMemberController::class)->middleware('level:admin,kasir,super');
+        Route::middleware('level:admin,super,kasir')->group(function () {
+            route::resource('/barang', barang_inventarisController::class);
+            Route::resource('/transaksi', tbTransaksiController::class);
+            Route::resource('/transaksi2', tbTransaksi2Controller::class);
+            Route::resource('/member', tbMemberController::class);
+            Route::get('/transaksi2/view', [tbTransaksi2Controller::class ,'view']);
+            Route::get('/faktur', [tbTransaksi2Controller::class ,'cetak_pdf']);
+});
+
     });
 
-    Route::resource('/transaksi', tbTransaksiController::class)->middleware('level:admin,kasir,super');
+
 
 });
 

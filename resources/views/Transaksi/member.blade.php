@@ -4,7 +4,7 @@
 <div class="modal-dialog modal-lg" role="document">
   <div class="modal-content">
     <div class="modal-header">
-      <h5 class="modal-title" id="exampleModalLabel">MENGUPDATE DATA MEMBER</h5>
+      <h5 class="modal-title" id="exampleModalLabel">PILIH MEMBER</h5>
       <button type="button" class="close" data-dismiss="modal" aria-label="Close">
         <span aria-hidden="true">&times;</span>
       </button>
@@ -28,7 +28,7 @@
                   <td>{{$value->jenis_kelamin}}</td>
                   <td>{{$value->tlp}}</td>
                   <td style="text-align: center" class="align-middle d-flex flex-row">
-                <button class="pilih-member" id="">PILIH</button></td>
+                <button class="btn btn-info pilih-member" id="">PILIH</button></td>
                 </tr>
                 @endforeach
                 </tbody>

@@ -8,20 +8,17 @@ use Illuminate\Database\Eloquent\Model;
 class tb_transaksi extends Model
 {
     use HasFactory;
-    protected $table = 'tb_transaksi';
+    protected $table    = 'tb_transaksi';
     public $timestamps = false;
-    protected $fillable = [
-        'id_outlet',
-        'kode_invoice',
-        'id_member',
-        'tgl',
-        'batas_waktu',
-        'tgl_bayar',
-        'biaya_tambahan',
-        'diskon',
-        'pajat',
-        'status',
-        'dibayar',
-        'id_user'
-    ];
+    protected $guarded  = ['id','created_at','updated_at'];
+
+    function member(){
+        return $this->belongsTo(tb_member::class,'id_member');
+    }
+    function users(){
+        return $this->belongsTo(user::class,'id_user');
+    }
+    function dt(){
+        return $this->hasMany(tb_detail_transaksi::class,'id_transaksi');
+    }
 }

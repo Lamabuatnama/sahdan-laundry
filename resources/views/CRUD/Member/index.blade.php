@@ -7,7 +7,7 @@
               <span aria-hidden="true">&times;</span>
             </button>
           </div>
-     @endif
+@endif
 <div class="card">
     <div class="card-header">
       <h3 class="card-title">DATA - DATA MEMBER</h3>

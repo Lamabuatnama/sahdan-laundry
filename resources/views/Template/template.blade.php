@@ -9,18 +9,18 @@
  @include('template.sidebar')
 
   <!-- Content Wrapper. Contains page content -->
-  <div class="content-wrapper">
-    <!-- Content Header (Page header) -->
-    <section class="content-header">
-      <div class="container-fluid">
-       @yield('content')
-      </div><!-- /.container-fluid -->
-    </section>
+    <div class="content-wrapper">
+        <!-- Content Header (Page header) -->
+        <section class="content-header">
+        <div class="container-fluid">
+        @yield('content')
+        </div><!-- /.container-fluid -->
+        </section>
 
-    <!-- Main content -->
+         <!-- Main content -->
 
-    <!-- /.content -->
-  </div>
+        <!-- /.content -->
+    </div>
   <!-- /.content-wrapper -->
 
 <!-- ./wrapper -->

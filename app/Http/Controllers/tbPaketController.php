@@ -15,7 +15,7 @@ class tbPaketController extends Controller
      */
     public function index()
     {
-        $paket  = tb_paket::all();
+        $paket  = tb_paket::where('id_outlet',auth()->user()->id_outlet)->get();
         $outlet  = tb_outlet::all();
         return view('CRUD.paket.index', compact(
             'paket','outlet'
@@ -106,3 +106,4 @@ class tbPaketController extends Controller
 
     }
 }
+ 

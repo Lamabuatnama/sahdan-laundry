@@ -26,7 +26,7 @@
                   <td>{{$value1->jenis}}</td>
                   <td>{{$value1->harga}}</td>
                   <td style="text-align: center" class="align-middle d-flex flex-row">
-                <button class="pilih-paket" id="">PILIH</button></td>
+                <button class="btn btn-info pilih-paket" id="">PILIH</button></td>
                 </tr>
                 @endforeach
                 </tbody>

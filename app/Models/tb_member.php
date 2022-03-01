@@ -16,4 +16,7 @@ class tb_member extends Model
         'jenis_kelamin',
         'tlp'
     ];
+    public function transaksi(){
+        return $this->hasMany(tb_member::class);
+    }
 }

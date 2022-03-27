@@ -1,7 +1,7 @@
 <div class="collapse" id="nav-form">
     <div class="card-body">
 
-        {{-- data awal pelanggan  --}}
+        {{-- data awal pelanggan --}}
 
         <div class="card">
             <div class="card-body">
@@ -9,28 +9,30 @@
                     <div class="form-group row col-6">
                         <label for="tanggal" class="col-sm-4 col-form-Label">Tanggal Transaksi</label>
                         <div class="col-sm-6">
-                            <input type="date" class="form-control" name="tgl" value="{{ date('Y-m-d')}}">
+                            <input type="date" class="form-control" name="tgl" value="{{ date('Y-m-d') }}">
                         </div>
                     </div>
                     <div Class="form-group row col-6">
-                            <Label for="estimasi" class="col-4 col-form-Label">Estimasi Selesai</Label>
+                        <Label for="estimasi" class="col-4 col-form-Label">Estimasi Selesai</Label>
                         <div class="col-6 al-auto">
-                            <input type="date" class="form-control ml-auto" name="batas_waktu" value="{{ date('Y-m-d', strtotime(date('Y-m-d') . '+3 day')) }}">
+                            <input type="date" class="form-control ml-auto" name="batas_waktu"
+                                value="{{ date('Y-m-d', strtotime(date('Y-m-d') . '+3 day')) }}">
                         </div>
                     </div>
                 </div>
                 <div class="row col-12">
                     <div class="form-group row col-8">
                         <label for="" class="col-sm-4 col-form-label">
-                        <button type="button" class="btn btn-primary btn-sm" data-toggle="modal" data-target="#pilihMemberModal">
-                            <i class="fas fa-plus"></i>
-                        </button>
+                            <button type="button" class="btn btn-primary btn-sm" data-toggle="modal"
+                                data-target="#pilihMemberModal">
+                                <i class="fas fa-plus"></i>
+                            </button>
                         </label>
 
                     </div>
                     <div class="form-group row col-6">
                         <label for="" class="col-sm-4 col-form-label">
-                        Pelanggan
+                            Pelanggan
                         </label>
                         <div class="col-6 ml-auto" id="nama-pelanggan">
                             -
@@ -48,15 +50,16 @@
             </div>
         </div>
 
-        {{-- end of data awal pelanggan  --}}
+        {{-- end of data awal pelanggan --}}
 
-        {{-- data paket  --}}
+        {{-- data paket --}}
 
         <div class="card">
             <div class="card-body">
                 <div class="row">
                     <div class="col-md-4">
-                        <button type="button" class="btn btn-primary btn-sm" data-toggle="modal" data-target="#pilihPaketModal">
+                        <button type="button" class="btn btn-primary btn-sm" data-toggle="modal"
+                            data-target="#pilihPaketModal">
                             Tambah Cucian
                         </button>
                     </div>
@@ -78,9 +81,9 @@
                                 <td colspan="5" style="text-align:center;font-style:italic">Belum ada data</td>
                             </tr>
                         </tbody>
-                       <tfoot>
-                           <tr>
-                               <td width="" colspan="3" align="right">Jumlah Bayar</td>
+                        <tfoot>
+                            <tr>
+                                <td width="" colspan="3" align="right">Jumlah Bayar</td>
                                 <td><span id="subtotal">0</span></td>
                                 <td rowspan="4">
                                     <label for="">Pembayaran</label>
@@ -95,7 +98,9 @@
                                 <td><input type="number" value="0" id="diskon" name="diskon"></td>
                             </tr>
                             <tr>
-                                <td colspan="3" align="right">Pajak<input type="number" value="0" min="0" class="qty" name="pajak" id="pajak-persen" size="2" style="width: 40px"></td>
+                                <td colspan="3" align="right">Pajak<input type="number" value="0" min="0"
+                                        class="qty" name="pajak" id="pajak-persen" size="2"
+                                        style="width: 40px"></td>
                                 <td><span id="pajak-harga">0</span></td>
                             </tr>
                             <tr>
@@ -107,15 +112,15 @@
                                 <td><span id="total">0</span></td>
                             </tr>
 
-                       </tfoot>
+                        </tfoot>
                     </table>
                 </div>
             </div>
         </div>
 
-        {{-- end of data paket  --}}
+        {{-- end of data paket --}}
 
-        {{-- pembayaran  --}}
+        {{-- pembayaran --}}
 
         <div class="card">
             <div class="card-body">
@@ -124,7 +129,7 @@
         </div>
 
 
-        {{-- end of pembayaran  --}}
+        {{-- end of pembayaran --}}
 
 
 

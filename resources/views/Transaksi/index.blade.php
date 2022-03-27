@@ -8,7 +8,7 @@
             </button>
         </div>
     @endif
-
+<section class="content">
     <div class="card">
         <div class="card-header">
             <h3 class="card-title">TRANSAKSI JASA</h3>
@@ -88,5 +88,6 @@
     </div>
     <!-- /.card-body -->
     </div>
+</section>
     @include('transaksi.script')
 @endsection

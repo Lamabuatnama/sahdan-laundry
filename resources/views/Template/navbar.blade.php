@@ -125,7 +125,7 @@
         <a class="nav-link" data-toggle="dropdown" href="#">
             <i class="fas fa-angle-down"></i>
         </a>
-        <div class="dropdown-menu dropdown-menu-lg dropdown-menu-right">
+        {{-- <div class="dropdown-menu dropdown-menu-lg dropdown-menu-right">
             <div class="user-panel mt-2 pb-3 mb-3 d-flex">
                 <a href="profil">
                 <div class="image">
@@ -149,7 +149,7 @@
                 </div>
             </div>
           </a>
-        </div>
+        </div> --}}
       </li>
       </li>
     </ul>

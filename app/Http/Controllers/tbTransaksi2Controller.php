@@ -35,16 +35,6 @@ class tbTransaksi2Controller extends Controller
     	return $pdf->stream();
     }
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
-    {
-        //
-    }
-
     private function generateKodeInvoice(){
         $last   = tb_transaksi::orderBy('id','desc')->first();
         $last   = ($last == null?1:$last->id + 1);
@@ -86,50 +76,5 @@ class tbTransaksi2Controller extends Controller
             ]);
         }
         return redirect('transaksi2')->with('success','input berhasil');
-    }
-
-    /**
-     * Display the specified resource.
-     *
-     * @param  \App\Models\tb_transaksi  $tb_transaksi
-     * @return \Illuminate\Http\Response
-     */
-    public function show(tb_transaksi $tb_transaksi)
-    {
-        //
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  \App\Models\tb_transaksi  $tb_transaksi
-     * @return \Illuminate\Http\Response
-     */
-    public function edit(tb_transaksi $tb_transaksi)
-    {
-        //
-    }
-
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\tb_transaksi  $tb_transaksi
-     * @return \Illuminate\Http\Response
-     */
-    public function update(Request $request, tb_transaksi $tb_transaksi)
-    {
-        //
-    }
-
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  \App\Models\tb_transaksi  $tb_transaksi
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy(tb_transaksi $tb_transaksi)
-    {
-        //
     }
 }

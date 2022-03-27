@@ -10,14 +10,25 @@
       <!-- Sidebar user (optional) -->
       <div class="user-panel mt-3 pb-3 mb-3 d-flex">
           <a href="profil">
-        <div class="image">
+          <form action="{{route('logout')}}" method="post">
+
+            <div class="image">
+
           <img src="{{asset('assets')}}/dist/img/user2-160x160.jpg" class="img-circle elevation-2" alt="User Image">
+
+
         </div>
         <div class="info">
           <a href="#" class="d-block">{{auth()->user()->nama}}</a>
         </div>
-    </a>
+        <button class="btn-danger" type="submit">Logout</button>
+        @csrf
+    </form>
+        </a>
+
       </div>
+
+
 
       <!-- SidebarSearch Form -->
       <div class="form-inline">
@@ -36,77 +47,79 @@
 
         <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
           <!-- Add icons to the links using the .nav-icon class
-               with font-awesome or any other icon font library -->
-               @can('isAdmin')
+               with font-awesome or any other icon font library -->)
           <li class="nav-header">FORMS</li>
-          <li class="nav-item">
-            <a href="#" class="nav-link">
-              <i class="nav-icon fas fa-edit"></i>
-              <p>
-                Forms
-                <i class="fas fa-angle-left right"></i>
-              </p>
-            </a>
-            <ul class="nav nav-treeview">
-              <li class="nav-item">
-                <a href="/users" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>USERS</p>
-                </a>
-              </li>
-              <li class="nav-item">
-                <a href="/outlet" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>OUTLET</p>
-                </a>
-              </li>
-              <li class="nav-item">
-                <a href="/paket" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>PAKET</p>
-                </a>
-              </li>
-              <li class="nav-item">
-                <a href="/member" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>MEMBER</p>
-                </a>
-              </li>
-            </ul>
-            @endcan
-            @can('isKasir')
-            <li class="nav-header">FORMS</li>
             <li class="nav-item">
-              <a href="#" class="nav-link">
-                <i class="nav-icon fas fa-edit"></i>
-                <p>
-                  Forms
-                  <i class="fas fa-angle-left right"></i>
-                </p>
-              </a>
-              <ul class="nav nav-treeview">
-                <li class="nav-item">
-                  <a href="/member" class="nav-link">
-                    <i class="far fa-circle nav-icon"></i>
-                    <p>MEMBER</p>
-                  </a>
-                </li>
-              </ul>
-            @endcan
-          </li>
-          <li class="nav-header">TRANSAKSI</li>
-          <li class="nav-item">
-            <a href="laravel" class="nav-link">
-              <i class="nav-icon fas fa-copy"></i>
-              <p>Transaksi Jasa</p>
-            </a>
-          </li>
-          <li class="nav-item">
-            <a href="laravel" class="nav-link">
-              <i class="nav-icon fas fa-shopping-basket"></i>
-              <p>Laporan</p>
-            </a>
-          </li>
+                <a href="/member" class="nav-link" {{ auth()->user()->role == 'owner' ? 'hidden' : '' }}>
+                    <i class="nav-icon fas fa-edit"></i>
+                    <p>Member</p>
+                </a>
+            </li>
+            <li class="nav-item" {{ auth()->user()->role != 'admin' ? 'hidden' : '' }}>
+                <a href="/users" class="nav-link">
+                    <i class="nav-icon fas fa-edit"></i>
+                    <p>Users</p>
+                </a>
+            </li>
+            <li class="nav-item" {{ auth()->user()->role != 'admin' ? 'hidden' : '' }}>
+                <a href="/paket" class="nav-link">
+                    <i class="nav-icon fas fa-edit"></i>
+                    <p>Paket</p>
+                </a>
+            </li>
+            <li class="nav-item" {{ auth()->user()->role != 'admin' ? 'hidden' : '' }}>
+                <a href="/outlet" class="nav-link">
+                    <i class="nav-icon fas fa-edit"></i>
+                    <p>Outlet</p>
+                </a>
+            </li>
+        </li>
+          <li class="nav-header">TRANSAKSI
+            <li class="nav-item">
+                <a href="/transaksi2" class="nav-link">
+                <i class="nav-icon fas fa-copy"></i>
+                <p>Transaksi Jasa</p>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a href="laravel" class="nav-link">
+                <i class="nav-icon fas fa-shopping-basket"></i>
+                <p>Laporan</p>
+                </a>
+            </li>
+        </li>
+        <li class="nav-header">Simulasi
+            <li class="nav-item">
+                <a href="/simulasi-1" class="nav-link">
+                <i class="nav-icon fas fa-shopping-basket"></i>
+                <p>Simulasi 1</p>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a href="/simulasi-2" class="nav-link">
+                <i class="nav-icon fas fa-shopping-basket"></i>
+                <p>Simulasi 2</p>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a href="/gaji" class="nav-link">
+                <i class="nav-icon fas fa-shopping-basket"></i>
+                <p>Gaji Karyawan</p>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a href="/penjemputan" class="nav-link">
+                <i class="nav-icon fas fa-shopping-basket"></i>
+                <p>Penjemputan Laundry</p>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a href="/Tbarang" class="nav-link">
+                <i class="nav-icon fas fa-shopping-basket"></i>
+                <p>Simulasi Transaksi</p>
+                </a>
+            </li>
+        </li>
           {{-- <li class="nav-header">EXAMPLES</li>
           <li class="nav-item">
             <a href="#" class="nav-link">

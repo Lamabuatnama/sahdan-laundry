@@ -9,11 +9,19 @@ use Illuminate\Support\Facades\DB;
 
 class loginController extends Controller
 {
+
+    /**
+     * Menentukan Tampilan
+     */
     public function showloginForm()
     {
         return view('login.index');
 
     }
+
+    /**
+     * Mengecek Email & Password dan Membuat session
+     */
 
     public function login(Request $request){
         $request->validate([
@@ -32,14 +40,9 @@ class loginController extends Controller
 
     }
 
-    public function chec(Request $request)
-    {
-
-        $data = auth()->user();
-
-
-        return dd($data);
-    }
+    /**
+     * Untuk Menghapus Users Yang Sedang Login
+     */
     public function logout(Request $request)
     {
 

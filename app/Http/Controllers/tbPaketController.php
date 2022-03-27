@@ -2,9 +2,12 @@
 
 namespace App\Http\Controllers;
 
+use App\Exports\PaketExport;
+use App\Imports\PaketImport;
 use App\Models\tb_outlet;
 use App\Models\tb_paket;
 use Illuminate\Http\Request;
+use Maatwebsite\Excel\Facades\Excel;
 
 class tbPaketController extends Controller
 {
@@ -22,15 +25,29 @@ class tbPaketController extends Controller
         ));
     }
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
-    {
-        //
-    }
+    public function excelExport()
+        {
+            return Excel::download(new PaketExport, 'paket.xlsx');
+            return redirect('/paket')->with('success', 'Data Berhasil DiExport');
+        }
+
+
+        public function excelImport(Request $request)
+        {
+            $validated = $request->validate([
+                'file' => 'required|mimes:csv,xls,xlsx'
+            ]);
+
+            if (!$validated) {
+                return back()->withErrors(['file','Belum Terisi']);
+            }
+
+                 // menangkap file excel
+                 $file = $request->file('file');
+                 Excel::import(new PaketImport, $file);
+
+        return redirect('/paket')->with('success', 'Data Berhasil DiImport');
+        }
 
     /**
      * Store a newly created resource in storage.
@@ -49,28 +66,6 @@ class tbPaketController extends Controller
         $create = tb_paket::create($validated);
         if($create)  return redirect('paket')->with('success', 'Data Sudah Ditambahkan');
 
-    }
-
-    /**
-     * Display the specified resource.
-     *
-     * @param  \App\Models\tb_paket  $tb_paket
-     * @return \Illuminate\Http\Response
-     */
-    public function show(tb_paket $tb_paket)
-    {
-        //
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  \App\Models\tb_paket  $tb_paket
-     * @return \Illuminate\Http\Response
-     */
-    public function edit(tb_paket $tb_paket)
-    {
-        //
     }
 
     /**
@@ -106,4 +101,3 @@ class tbPaketController extends Controller
 
     }
 }
- 

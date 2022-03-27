@@ -21,16 +21,6 @@ class tbOutletController extends Controller
     }
 
     /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
-    {
-        //
-    }
-
-    /**
      * Store a newly created resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
@@ -47,29 +37,6 @@ class tbOutletController extends Controller
         if($create)  return redirect('outlet')->with('success', 'Data Sudah Ditambahkan');
 
     }
-
-    /**
-     * Display the specified resource.
-     *
-     * @param  \App\Models\tb_outlet  $tb_outlet
-     * @return \Illuminate\Http\Response
-     */
-    public function show(tb_outlet $tb_outlet)
-    {
-        //
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  \App\Models\tb_outlet  $tb_outlet
-     * @return \Illuminate\Http\Response
-     */
-    public function edit(tb_outlet $tb_outlet)
-    {
-        //
-    }
-
     /**
      * Update the specified resource in storage.
      *

@@ -1,5 +1,15 @@
 @extends('template.template')
 @section('content')
+@if ($errors->any())
+            <div class="alert alert-danger text-center" role="alert" id="danger-alert">
+                @foreach ($errors->all() as $error)
+                  {{ $error }}
+                @endforeach
+                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+            </div>
+                </button>
+          @endif
 @if (Session::has('success'))
         <div class="alert alert-success alert-dismissible fade show" role="alert">
             {{ Session::get('success') }}
@@ -17,6 +27,20 @@
         <table id="table" class="table table-bordered table-striped">
             <div class="input-group mb-3">
     @include('crud.member.tambah')
+    @include('CRUD.member.import')
+    <a href="/memberexport" class="btn btn-success">
+        <i class="fa fa-file-excel"></i>
+        </a>
+    <br>
+    <br>
+    {{-- <button type="button" id="btn-export-xls">
+        EXCEL
+    </button> --}}
+
+
+
+
+
 </div>
 
         <thead>
@@ -40,7 +64,7 @@
               }
           @endphp
           <td>{{$value->tlp}}</td>
-          <td style="text-align: center" class="align-middle d-flex flex-row"> @include('crud.member.update')@include('crud.member.hapus')</td>
+          <td style="text-align: center" class="align-middle d-flex flex-row"> @include('crud.member.update') &nbsp; @include('crud.member.hapus')</td>
         </tr>
         @endforeach
         </tbody>
@@ -48,6 +72,8 @@
     </div>
     <!-- /.card-body -->
   </div>
+
+
 
   @endsection
 
